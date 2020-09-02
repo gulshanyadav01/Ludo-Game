@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ludo</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet"> 
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="play">Gulshan Ludo </h1>
+            <div class="dice">
+            <p>Player 1</p>
+            <img src="dice1.png" id="check1">
+        </div>
+            <div class="dice">
+                <p>Player 2</p>
+                <img src="dice1.png" id="check2">
+                
+
+
+            </div>
+
+       
+           
+        </div>
+        <button class="bt" type="submit" onclick="ludogames()">Click Me</button>
+
+       
+        <script>
+            const ludogames = () => {
+
+            // player 1 dice 
+            const play1 = Math.floor(Math.random()*6)+1;
+            const play1dice = `dice${play1}.png`;
+            document.getElementById('check1').setAttribute("src",play1dice);
+            // player 2 dice 
+            const play2 = Math.floor(Math.random()*6)+1;
+            const play2dice = `dice${play2}.png`;
+            document.getElementById('check2').setAttribute("src",play2dice);
+            // winning condition 
+            if(play1>play2){
+               document.querySelector("h1").innerHTML="Player1 Won:)";
+               
+            }
+            else if(play2>play1){
+                document.querySelector("h1").innerHTML="Player2 Won:)";
+            }
+            else if(play1==play2) {
+                docuent.querySelector('h1').innerHTML="Draw";
+            }
+
+}
+
+            
+
+        </script>
+    </body>
+</html>
